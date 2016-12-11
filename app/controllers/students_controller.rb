@@ -2,11 +2,13 @@ class StudentsController < ApplicationController
 
 
   def index 
-    if params[:column].present? && Student.column_names.include?(params[:column])
+    @student_details = []
+    if params[:column].present? && Student.column_names.include?(params[:column]) 
       @student_details = Student.all.pluck(params[:column])
     else
-      @student_details = []
+      flash.now[:notice] = "Nothing to show"
     end
   end
+
 
 end

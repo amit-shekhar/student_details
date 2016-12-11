@@ -11,5 +11,12 @@
   <body>
     <%= render 'layouts/search_form' %>
     <%= yield %>
+    <% flash.each do |message_type, message| %>
+      <% unless message_type == :timedout %>
+        <div class="text-center <%= message_type.to_s %>-msg">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
   </body>
 </html>

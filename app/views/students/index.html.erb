@@ -1,3 +1,18 @@
-<% @student_details.each do |data| %>
-  <div><%= data %></div>
-<% end %>
+<div class="student_details">
+  <ul>
+    <% @student_details.each do |data| %>
+      <li><%= data %></li>
+    <% end %>
+  </ul>
+</div>
+
+<style>
+ .student_details{
+  padding:50px;
+ } 
+
+ .student_details ul li{
+    font-size: 20px;
+ }
+
+</style>
